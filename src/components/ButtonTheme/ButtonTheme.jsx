@@ -1,41 +1,21 @@
 import { useState } from "react"
+import { temas } from "./themes"
 
 export const ButtonTheme = ()=>{
 
-    const [theme, setTheme] = useState();
+    const [tema, setTema] = useState(temas[0]);
 
-    const temas = [
-        {
-          nombre: 'Tema 1',
-          backgroundColor: '#FFFFFF',
-          color: '#000000',
-          borderColor: '#000000'
-        },
-        {
-          nombre: 'Tema 2',
-          backgroundColor: '#000000',
-          color: '#FFFFFF',
-          borderColor: '#FFFFFF'
-        },
-        {
-          nombre: 'Tema 3',
-          backgroundColor: '#FF0000',
-          color: '#FFFFFF',
-          borderColor: '#000000'
-        }
-      ];
-
-      const changeTheme = ()=>{
-        setTheme(temas[Math.round(Math.random()*(temas.length - 1))])
+    const changeTheme = ()=>{
+        setTema(temas[Math.round(Math.random()*(temas.length - 1))])
     }
 
-//    const body = document.querySelector("body");
-//     body.style.backgroundColor = {temas.backgroundColor}
-
-    
-    return(<div>
-        <h1>{temas.nombre} </h1>
+    const { nombre, ...temaSeleccionado} = tema;
+  
+    return(<div style={ temaSeleccionado }>
+        <h1>Estas usando: {nombre} </h1>
         <button onClick={changeTheme} >Cambiar tema</button>
+        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi hic, eum reiciendis omnis veritatis numquam officia voluptate laborum cupiditate, voluptas aspernatur quos dolor vero repellendus placeat voluptates necessitatibus repudiandae illum.</p>
     </div>
         
     )

@@ -7,9 +7,9 @@ import { ButtonTheme } from './components/ButtonTheme/ButtonTheme'
 
 function App() {
   return(<>
-    <Button />
+    {/* <Button /> */}
     {/* <SelectionBox /> */}
-    {/* <ButtonTheme /> */}
+    <ButtonTheme />
   </>
 
   )
